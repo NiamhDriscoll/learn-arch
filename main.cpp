@@ -13,7 +13,7 @@ int basic(){
     std::cout << "Firstly, find out what is in the current directory. Us the 'ls' command." << '\n';
     std::cout << "Type in 'ls': ";
     while (true){
-        std::cin >> input;
+           std::getline(std::cin, input);
             
         if (input.compare("ls") == 0){
             break;
@@ -43,7 +43,7 @@ int basic(){
     std::cout << "Good job! you changed folders. Now lets see what is inside." << std::endl;
     std::cout << "Try it: ";
         while (true){
-        std::cin >> input;
+        std::getline(std::cin, input);
             
         if (input.compare("ls") == 0){
             break;
@@ -56,9 +56,9 @@ int basic(){
     std::cout << "\033[32mprogram \033[0m";
     std::cout << "\033[42manotherdir\033[0m" << std::endl;
     std::cout << "There is a folder and an executable. We know this because one has green text (differant from green highlight)" << std::endl;
-    std::cout << "Run it with './file_name'"; 
+    std::cout << "Run it with './file_name': "; 
         while (true){
-        std::cin >> input;
+        std::getline(std::cin, input);
             
         if (input.compare("./program") == 0){
             break;
@@ -68,7 +68,7 @@ int basic(){
             std::cout << "Type in './program': ";
         }
     }
-    std::cout << "hello user, you ran the program";
+    std::cout << "hello user, you ran the program" << std::endl;
     std::cout << "Great job. Now lets see what is inside the sub-folder. This time, instead of moving inside you can directly 'ls' it with 'ls folder_name'" << std::endl;
     std::cout << "Try it: ";
             while (true){
@@ -85,7 +85,7 @@ int basic(){
     std::cout << "\033[32mnot_important \033[0m";
     std::cout << "\033[42mdeleteme\033[0m" << std::endl;
     std::cout << "This stuff is not important. We can delete it. Use the command 'rm file_name'. But for folder, you have to add '-r' to the end to be recursive." << std::endl;
-    std::cout << "\033[31mWarning: in real usage, be careful. You can accidentaly delete important things.\033[0m";    
+    std::cout << "\033[31mWarning: in real usage, be careful. You can accidentaly delete important things.\033[0m" << std::endl;    
     std::cout << "Try it: ";
                 while (true){
         std::getline(std::cin, input);
@@ -111,7 +111,7 @@ int basic(){
         }
     }
     std::cout << "\033[32mprogram \033[0m";
-    std::cout << "Now the folder is gone. Great job!";
+    std::cout << "Now the folder is gone. Great job!" << std::endl;
     return 0;
 
 }
