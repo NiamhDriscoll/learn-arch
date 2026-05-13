@@ -10,7 +10,7 @@ int main(){
 int basic(){
     std::string input;
     std::cout << "Hello there and welcome. Here you will learn some basic commands to help navigate your Arch Linux sysytem." << '\n';
-    std::cout << "Firstly, find out what is in the current directory. Us the 'ls' command." << '\n';
+    std::cout <<9148-64D0 "Firstly, find out what is in the current directory. Us the 'ls' command." << '\n';
     std::cout << "Type in 'ls': ";
     while (true){
            std::getline(std::cin, input);
@@ -116,3 +116,51 @@ int basic(){
 
 }
 
+int sudo(){
+    std::cout << "Sometimes, you need to change the permission you use. We use sudo." << std::endl;
+    std::cout << "Just do 'sudo' and the command you want to do. You have be a sudoer (allowed to use sudo)." <std::endl;
+    std::cout << "Try to list with sudo: ";
+    std::string input;
+    std::string notuse;
+                        while (true){
+        std::getline(std::cin, input);
+            
+        if (input.compare("sudo ls") == 0){
+                        std::cout << "[sudo] password: ";
+            std::getline(std::cin, notuse);
+            break;
+        }
+        else {
+            std::cout << "Sorry, that was incorrect. Please try again." << '\n';
+            std::cout << "Type in 'sudo ls': ";
+        }
+    }
+    std::cout << "dir_1 dir_2";
+    std::cout << "You may see the colors are gone. With sudo ls, there are no colors." << std::endl;
+    std::cout << "dir_1 is protected. Try rming it." << std::endl;
+    std::cout << "\033[31mWarning: If something needs sudo to remove, that means it is important. Use carefuly.\033[0m" << std::endl; 
+    std::cout << "Try it: ";
+    while (true){
+        std::getline(std::cin, input);
+            
+        if (input.compare("sudo rm dir_1") == 0){
+            std::cout << "[sudo] password: ";
+            std::getline(std::cin, notuse);
+            break;
+        }
+        else {
+            std::cout << "Sorry, that was incorrect. Please try again." << '\n';
+            std::cout << "Type in 'sudo rm dir_1': ";
+        }
+    }
+    std::cout << "Great job! Now you can use sudo";
+    return 0;  
+    //this is not being used
+}
+
+int pacman(){
+    std::cout << "Now, what if wou want to install something new? The main way is to use pacman." << std::endl;
+    std::cout << "The syntax for installing is 'sudo pacman -S pkg-name'";
+    //this is not finished
+    return 0;
+}
