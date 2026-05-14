@@ -1,9 +1,15 @@
 #include <iostream>
 #include <string>
 int basic();
-
+int pick();
 int main(){
+    int s = pick();
+    if (s = 1){
     basic();
+    }
+    else if (s = 0){
+       return 0; 
+    }
     return 0;
 }
 
@@ -156,6 +162,31 @@ int sudo(){
     std::cout << "Great job! Now you can use sudo";
     return 0;  
     //this is not being used
+}
+
+int pick(){
+    std::string selection;
+    int selection_int;
+    std::cout << "What leason do you want to try?" << std::endl;
+    std::cout << "Simple file system interactions: 1" << std::endl;
+    while (true){
+        std::cout << "Selection: "
+    std::getline(std::cin, selection);
+       try {
+        selection_int = std::stoi(selection); 
+        
+    } catch (const std::invalid_argument& e) {
+        std::cerr << "Invalid argument: " << e.what() << std::endl;
+    } catch (const std::out_of_range& e) {
+        std::cerr << "Out of range: " << e.what() << std::endl;
+    }
+    if (selection_int > 1 ||  selection_int < 0){
+        std::cout << "Out of range"
+    }
+    else if (true){
+        return selection_int;
+    }
+}
 }
 
 int pacman(){
