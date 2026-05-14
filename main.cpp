@@ -3,6 +3,7 @@
 int basic();
 int pick();
 int sudo();
+int pacman();
 int main(){
     int s = pick();
     if (s = 1){
@@ -198,6 +199,68 @@ int pick(){
 int pacman(){
     std::cout << "Now, what if wou want to install something new? The main way is to use pacman." << std::endl;
     std::cout << "The syntax for installing is 'sudo pacman -S pkg-name'";
+    std::string input;
+    std::cout << "Try installing 'example': ";
+    while (true){
+        std::getline(std::cin, input);
+            
+        if (input.compare("sudo pacman -S example") == 0){
+            std::cout << "[sudo] password: ";
+            std::string notuse;
+            std::getline(std::cin, notuse);
+            break;
+        }
+        else {
+            std::cout << "Sorry, that was incorrect. Please try again." << '\n';
+            std::cout << "Type in 'sudo pacman -S example': ";
+        }
+    }
+    std::cout << "Great job! You installed example. Now you can run it with 'example'." << std::endl;
+    std::cout << "Try it: ";
+    while (true){
+        std::getline(std::cin, input);
+        if (input.compare("example") == 0){
+            break;
+        }
+        else {
+            std::cout << "Sorry, that was incorrect. Please try again." << '\n';
+            std::cout << "Type in 'example': ";
+        }
+    }
+    std::cout << "You ran example! Great job!" << std::endl;
+    std::cout << "You can update your system with 'sudo pacman -Syu'. This will update all your packages." << std::endl;
+    std::cout << "Try it: ";
+    while (true){
+        std::getline(std::cin, input);
+        if (input.compare("sudo pacman -Syu") == 0){
+            std::cout << "[sudo] password: ";
+            std::string notuse;
+            std::getline(std::cin, notuse);
+            break;
+        }
+
+        else {
+            std::cout << "Sorry, that was incorrect. Please try again." << '\n';
+            std::cout << "Type in 'sudo pacman -Syu': ";
+        }
+    }
+    std::cout << "Great job! You updated your system!" << std::endl;
+    std::cout << "You can also remove packages with 'sudo pacman -R pkg-name'. ";
+    std::cout << "Now, remove the package you just installed: ";
+    while (true){
+        std::getline(std::cin, input);
+        if (input.compare("sudo pacman -R example") == 0){
+            std::cout << "[sudo] password: ";
+            std::string notuse;
+            std::getline(std::cin, notuse);
+            break;
+        }
+        else {
+            std::cout << "Sorry, that was incorrect. Please try again." << '\n';
+            std::cout << "Type in 'sudo pacman -R example': ";
+        }
+    }
+    std::cout << "Great job! You removed example!" << std::endl;
     //this is not finished
     return 0;
 }
