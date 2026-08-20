@@ -5,6 +5,6 @@ Arch Linux is known for many things, two of them being that it is fun and also t
 ## Install
 To install, run on any Arch system with yay.
 # Important 
-Aur decided to remove this (I have not been told why) so it for the moment it doesn't work (like anyone was using it in the first place)
+Aur decided to remove this (I have not been told why) so it for the moment it doesn't work (like anyone was using it in the first place). For now just download the zip containing the code.
 ### Install command: yay -S learn-arch
 Then, run with learn-arch
